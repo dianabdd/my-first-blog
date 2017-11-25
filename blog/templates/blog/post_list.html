@@ -9,17 +9,13 @@
 			<h1><a href="/">Diana's Django Girls Blog</a></h1>
 		</div>
 
-		<div>
-			<p>published: 25.11.2017, 15:32</p>
-			<h2><a href="">My first post</a></h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel rutrum enim, vulputate pulvinar erat. Etiam fringilla malesuada accumsan. Etiam pellentesque et arcu sed hendrerit. Cras vestibulum turpis nec commodo varius. Donec volutpat eleifend mauris id tincidunt. Mauris facilisis molestie lacus. Proin libero dolor, ornare quis placerat eu, tempus ut ligula. Quisque accumsan tortor et ante commodo feugiat. Nullam malesuada placerat dolor ullamcorper elementum. Praesent ultrices aliquet tortor, sit amet pharetra erat vulputate et. Sed fringilla felis orci, in ultrices ipsum ornare sit amet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed consequat neque eros, quis maximus massa eleifend eu. Vivamus vitae orci ex. Sed tristique rutrum nulla, non aliquet ante maximus vitae.	</p>
-		</div>
-		
-		<div>
-			<p>published: 26.11.2017, 15:38</p>
-			<h2><a href="">My second post</a></h2>
-			<p>Duis tincidunt nulla at sagittis porttitor. Donec aliquam purus quis massa placerat placerat. Nam semper vulputate nibh, quis fermentum dui hendrerit at. Etiam nunc neque, pretium quis cursus nec, egestas ac lacus. Donec semper felis dui, vel consequat velit tristique vel. In accumsan, lorem a ullamcorper rutrum, orci magna ultrices lorem, quis dignissim ipsum eros id velit. Maecenas sodales volutpat luctus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean vulputate tempor vulputate. Donec imperdiet vestibulum arcu ut aliquam. In nisi erat, feugiat in scelerisque nec, interdum sit amet odio. Ut sit amet rhoncus ligula. Maecenas vel dui ut magna porta venenatis in id lectus.</p>
-		</div>
+		{% for post in posts %}
+   			 <div>
+       			 <p>published: {{ post.published_date }}</p>
+       			 <h1><a href="">{{ post.title }}</a></h1>
+        		<p>{{ post.text|linebreaksbr }}</p>
+    		</div>
+		{% endfor %}
 
 	</body>
 </html>
